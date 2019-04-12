@@ -12,16 +12,16 @@ import (
 )
 
 func main() {
-	log := logrus.New()
-	hook, _ := NewSyslogHook(
-		SyslogHookConfig{
-			Network:  "udp",
-			Raddr:    "localhost:514",
-			Priority: syslog.LOG_INFO,
-			Formatter: &logrus.JSONFormatter{},
-		})
+  log := logrus.New()
+  hook, _ := NewSyslogHook(
+    SyslogHookConfig{
+      Network:   "udp",
+      Raddr:     "localhost:514",
+      Priority:  syslog.LOG_INFO,
+      Formatter: &logrus.JSONFormatter{},
+    })
 
-	log.Hooks.Add(hook)
+  log.Hooks.Add(hook)
 }
 ```
 
@@ -35,8 +35,8 @@ import (
 )
 
 func main() {
-	log := logrus.New()
-	hook, _ := NewSyslogHook(SyslogHookConfig{Priority: syslog.LOG_INFO})
-	log.Hooks.Add(hook)
+  log := logrus.New()
+  hook, _ := NewSyslogHook(SyslogHookConfig{Priority: syslog.LOG_INFO})
+  log.Hooks.Add(hook)
 }
 ```
